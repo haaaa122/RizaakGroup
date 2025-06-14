@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rizaak Group</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f7faff;
+      color: #0a3d62;
+    }
+    header {
+      background-color: #0984e3;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #74b9ff;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    h1, h2 {
+      color: #0984e3;
+    }
+    ul.services-list {
+      list-style-type: square;
+      padding-left: 20px;
+      color: #2d3436;
+    }
+    footer {
+      background-color: #0984e3;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 40px;
+    }
+    /* Contact Form */
+    form {
+      background: #dfe6e9;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(9,132,227,0.2);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #2d3436;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #b2bec3;
+      border-radius: 5px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    button {
+      background-color: #0984e3;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #74b9ff;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      main {
+        margin: 20px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Rizaak Group</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="home">
+    <h1>Welcome to Rizaak Group</h1>
+    <p>We are a global company offering diverse business solutions to help you succeed.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Rizaak Group is a modern business company specializing in consulting, digital solutions, international trade, training, and investment advisory.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul class="services-list">
+      <li>Consulting Services</li>
+      <li>Digital Solutions</li>
+      <li>Import & Export</li>
+      <li>Training & Development</li>
+      <li>Investment Advisory</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm" onsubmit="return handleSubmit(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formMessage" style="color: green; font-weight: bold;"></p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Rizaak Group. All rights reserved.
+</footer>
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault();
+    document.getElementById('formMessage').textContent = "Thank you for contacting us, we'll get back to you soon!";
+    event.target.reset();
+    return false;
+  }
+</script>
+
+</body>
+</html>
